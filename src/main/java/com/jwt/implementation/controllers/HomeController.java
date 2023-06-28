@@ -2,6 +2,7 @@ package com.jwt.implementation.controllers;
 
 import com.jwt.implementation.models.User;
 import com.jwt.implementation.services.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ public class HomeController {
     private UserService userService;
 //    http://localhost:8080/home/users
     @GetMapping("/users")
-    public List<User> getUser(){
+    public List<User> getUser(HttpServletRequest request){
         logger.info("Getting Users info.");
         return userService.getUsers();
     }
