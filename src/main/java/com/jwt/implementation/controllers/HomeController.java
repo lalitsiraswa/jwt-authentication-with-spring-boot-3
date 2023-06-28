@@ -24,7 +24,6 @@ public class HomeController {
     @GetMapping("/users")
     public List<User> getUser(){
         logger.info("Getting Users info.");
-        System.out.println("-------------------------" + userService.getUsers() + "----------------------------");
         return userService.getUsers();
     }
 }
